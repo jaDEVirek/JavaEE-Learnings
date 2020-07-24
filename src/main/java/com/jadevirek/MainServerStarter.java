@@ -15,15 +15,19 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class MainServerStarter {
     public static void main(String[] args) {
 
-        RouterFunction<ServerResponse> route = route(GET("/"), request -> ServerResponse.ok()
-                .body(fromValue("Hello")));
+        RouterFunction<ServerResponse> route = route(GET("/"),
+                request -> ServerResponse.ok()
+                        .body(fromValue("Hello")));
 
         HttpServer server = HttpServer.create()
                 .host("localhost")
-                .port(8080);
+                .port(9090);
 
         HttpHandler httpHandler = RouterFunctions.toHttpHandler(route);
         server.handle(new ReactorHttpHandlerAdapter(httpHandler))
-                .bindNow();
+                .bind()
+                .block()
+                .onDispose()
+                .block();
     }
 }
