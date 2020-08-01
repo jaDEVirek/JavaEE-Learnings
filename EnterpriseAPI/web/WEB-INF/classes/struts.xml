@@ -5,10 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
     <constant name="struts.devMode" value="true"/>
-    <package name="default" namespace="/" extends="struts-default">
-        <action name="hello" class="com.jadevirek.action.SetUpACtion">
-            <result>greetings.jsp</result>
+    <package name="default" namespace="/enterprise" extends="struts-default">
+        <action name="setUp" class="com.jadevirek.action.SetUpACtion">
+            <result name="success">/greetings.jsp</result>
+            <result name="failure">/error.jsp</result>
         </action>
     </package>
 
