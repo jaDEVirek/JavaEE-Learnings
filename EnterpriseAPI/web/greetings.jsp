@@ -10,6 +10,7 @@
     <title>Hello Action Example</title>
 </head>
 <body>
-Hello <s:property value="name"/>!
+Hello <s:property value="name"/> !
+
 </body>
 </html>
