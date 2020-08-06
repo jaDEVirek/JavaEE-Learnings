@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class SetUpAction {
 
-    private String name;
+    private String name = "its a final name ! ";
     private List<String> usersFromService = new ArrayList<>();
     private final Logger classLogger = Logger.getLogger(SetUpAction.class.getName());
 
