@@ -5,6 +5,7 @@ function callMyAction() {
         dataType: 'text',
         success: function (data) {
             alert(data);
+            return data;
         }
     });
 }

@@ -1,0 +1,14 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Example TLD with Body</short-name>
+
+    <tag>
+        <name>actiontg</name>
+        <tag-class>com.jadevirek.tags.ActionTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>message</name>
+        </attribute>
+    </tag>
+</taglib>
