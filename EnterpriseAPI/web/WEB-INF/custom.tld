@@ -11,4 +11,12 @@
             <name>message</name>
         </attribute>
     </tag>
+    <tag>
+        <name>jsptag</name>
+        <tag-class>com.jadevirek.tags.JspTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>id</name>
+        </attribute>
+    </tag>
 </taglib>
