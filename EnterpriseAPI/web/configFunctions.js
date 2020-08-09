@@ -1,5 +1,5 @@
 let counter = 0;
-setInterval("callMyAction();", 5000);
+setInterval("callMyAction()", 5000);
 
 function callMyAction() {
     $.ajax({
@@ -9,11 +9,12 @@ function callMyAction() {
         success: function (data) {
             // lert(data);
             document.getElementById("pin").innerHTML = data + " " + counter;
-            console.log("refresh ")
             counter++;
             console.log(counter)
             // $('#pin').load(location.href+'#pin');
         }
     });
 }
+
+
 

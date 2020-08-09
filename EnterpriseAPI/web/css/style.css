@@ -3,10 +3,11 @@ body {
 }
 
 #inner {
-    border: 4px solid grey;
-    border-radius: 35px 35px 35px 35px;
-    width: 200px;
-    height: 100px;
+    margin: 0 auto;
+    border: 3px solid grey;
+    border-radius: 30px 30px 30px 30px;
+    width: 180px;
+    height: 80px;
     background-size: cover;
     background: url("images/menu_bkgrd_blue.jpg");
 

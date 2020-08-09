@@ -12,7 +12,6 @@ public class JspTag extends TagSupport {
 
         JspWriter out = pageContext.getOut();
         try {
-            out.print("<input type=\"text\" name=\"name2\"/>");
             out.print("<div id=\"inner\">\n" + " <p id=\"pin\">\n> </p>" +
                     "    </div>");
             out.print(
