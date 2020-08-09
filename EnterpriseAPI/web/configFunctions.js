@@ -1,5 +1,6 @@
-let counter=0;
+let counter = 0;
 setInterval("callMyAction();", 5000);
+
 function callMyAction() {
     $.ajax({
         type: "GET",
@@ -7,7 +8,7 @@ function callMyAction() {
         dataType: 'text',
         success: function (data) {
             // lert(data);
-            document.getElementById("pin").innerHTML = data + " "+counter;
+            document.getElementById("pin").innerHTML = data + " " + counter;
             console.log("refresh ")
             counter++;
             console.log(counter)

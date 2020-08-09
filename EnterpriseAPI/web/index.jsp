@@ -18,7 +18,7 @@
     </script>
 </head>
 <%--<body onload="callMyAction()">--%>
-<body >
+<body>
 <form action="enterprise/setUp">
     <label for="name">Enter your name</label><br/>
     <ex:actiontg message="TypeOfBrowser"/>

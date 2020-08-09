@@ -5,7 +5,7 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
-public class ActionTag extends SimpleTagSupport  {
+public class ActionTag extends SimpleTagSupport {
 
     private String message;
 

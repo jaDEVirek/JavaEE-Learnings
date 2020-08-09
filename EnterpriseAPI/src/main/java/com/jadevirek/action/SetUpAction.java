@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 
 public class SetUpAction {
 
+    private final Logger classLogger = Logger.getLogger(SetUpAction.class.getName());
     private String name = "its a final name ! ";
     private List<String> usersFromService = new ArrayList<>();
-    private final Logger classLogger = Logger.getLogger(SetUpAction.class.getName());
 
     public String execute() throws Exception {
         usersFromService = ServiceDataProvider.prepareStoredUsers();
