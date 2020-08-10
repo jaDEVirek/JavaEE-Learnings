@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class JspTag extends TagSupport {
 
+    private String time = "5000";
 
     @Override public int doStartTag() throws JspException {
 
@@ -15,7 +16,7 @@ public class JspTag extends TagSupport {
             out.print("<div id=\"inner\">\n" + " <p id=\"pin\">\n> </p>" +
                     "    </div>");
             out.print(
-                    "<script>document.getElementById(\"inner\").addEventListener(\"load\", callMyAction());</script>");
+                    "<script>document.getElementById(\"inner\").addEventListener(\"load\", setIntervalAction(" + time + "));</script>");
         } catch (IOException e) {
             e.printStackTrace();
         }

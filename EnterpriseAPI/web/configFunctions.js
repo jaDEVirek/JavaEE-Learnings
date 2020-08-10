@@ -1,5 +1,7 @@
 let counter = 0;
-setInterval("callMyAction()", 5000);
+
+//setInterval("callMyAction()", 5000);
+
 
 function callMyAction() {
     $.ajax({
@@ -11,9 +13,15 @@ function callMyAction() {
             document.getElementById("pin").innerHTML = data + " " + counter;
             counter++;
             console.log(counter)
+            console.log("tt")
             // $('#pin').load(location.href+'#pin');
         }
     });
+}
+
+function setIntervalAction(args) {
+    callMyAction();
+    setInterval(callMyAction, args);
 }
 
 

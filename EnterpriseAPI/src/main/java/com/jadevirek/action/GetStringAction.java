@@ -6,7 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public class GetStringAction   {
+public class GetStringAction {
 
     private InputStream stringName;
 
