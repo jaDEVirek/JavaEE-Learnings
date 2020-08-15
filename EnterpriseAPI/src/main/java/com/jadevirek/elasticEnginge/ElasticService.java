@@ -1,4 +1,4 @@
-package com.jadevirek.payment_algorithm;
+package com.jadevirek.elasticEnginge;
 
 public class ElasticService {
 }

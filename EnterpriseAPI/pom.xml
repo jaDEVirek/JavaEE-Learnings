@@ -22,6 +22,12 @@
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- elastic search API dependency -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.6.2</version>
+        </dependency>
 
     </dependencies>
     <!-- Package and build deploy -->
