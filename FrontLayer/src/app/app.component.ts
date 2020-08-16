@@ -24,6 +24,13 @@ export class AppComponent {
       data => {
         this.time = data;
       });
+
+    this.http.get('api/massages/').subscribe(
+      (data: Array<Massage>) => {
+        this.messages = data;
+      }
+    );
   }
 }
+
 
