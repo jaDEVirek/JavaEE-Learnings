@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+
 interface Massage {
   content: string;
   author: string;
@@ -15,6 +16,7 @@ export class AppComponent {
   title = 'FrontLayer';
   time = 'beforeTime';
   messages = Array<Massage>();
+  newMassage: Massage = {author: "", content: ""};
 
   constructor(private http: HttpClient) {
   }
