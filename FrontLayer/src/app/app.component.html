@@ -17,7 +17,6 @@
     <mat-card-content class="content">
       <p>
         {{msg.content}}
-        asfasfa
       </p>
     </mat-card-content>
     <mat-card-actions>
@@ -25,4 +24,16 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Author name:</mat-label>
+      <input matInput placeholder="Ex. Name" [(ngModel)]="newMassage.author">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Massage:</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="newMassage.content" ]></textarea>
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="addNewMessage()" color="accent">Nowa wiadomość</button>
 </div>

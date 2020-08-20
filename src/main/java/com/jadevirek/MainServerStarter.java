@@ -2,6 +2,7 @@ package com.jadevirek;
 
 
 import com.jadevirek.response.Massage;
+import io.vavr.collection.List;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.HttpHandler;
 import org.springframework.http.server.reactive.ReactorHttpHandlerAdapter;
@@ -14,8 +15,6 @@ import reactor.netty.http.server.HttpServer;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
@@ -24,7 +23,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.n
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 public class MainServerStarter {
-    private static final List<Massage> massages = new ArrayList<>();
+    private static List<Massage> massages = List.empty();
 
 
     public static void main(String[] args) {
@@ -37,7 +36,7 @@ public class MainServerStarter {
      * On call - init massages
      */
     public MainServerStarter() {
-        massages.add(new Massage("Rejestrator1", "Pierwsze słowa"));
+        massages = massages.append(new Massage("Rejestrator1", "Pierwsze słowa"));
     }
 
     private static RouterFunction<ServerResponse> getRouteResponse() {
@@ -52,10 +51,10 @@ public class MainServerStarter {
             // Mono promise for single value
             Mono<Massage> postedMassage = request.bodyToMono(Massage.class);
             return postedMassage.flatMap(msg -> {
-                massages.add(msg);
+                massages = massages.append(msg);
                 return ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(fromValue(massages));
+                        .body(fromValue(massages.toJavaList()));
             });
         };
     }
@@ -63,7 +62,7 @@ public class MainServerStarter {
     private static HandlerFunction<ServerResponse> renderMessages() {
         return request -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(fromValue(massages));
+                .body(fromValue(massages.toJavaList()));
 
     }
 

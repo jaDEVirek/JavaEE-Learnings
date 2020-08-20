@@ -33,6 +33,14 @@ export class AppComponent {
       }
     );
   }
+  addNewMessage(): void {
+    this.http.post('api/massage', this.newMassage).subscribe(
+      (data: Array<Massage>) => {
+        this.messages = data;
+        this.newMassage.content = "";
+      }
+    );
+  }
 }
 
 

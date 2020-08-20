@@ -13,4 +13,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-webflux:2.2.4.RELEASE')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('io.projectreactor:reactor-test')
+    compile "io.vavr:vavr:0.10.3"
 }
