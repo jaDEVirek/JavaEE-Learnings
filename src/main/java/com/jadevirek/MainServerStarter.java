@@ -36,7 +36,7 @@ public class MainServerStarter {
      * On call - init massages
      */
     public MainServerStarter() {
-        massages = massages.append(new Massage("Rejestrator1", "Pierwsze słowa"));
+        syncAddMessage(new Massage("Rejestrator1", "Pierwsze słowa"));
     }
 
     private static RouterFunction<ServerResponse> getRouteResponse() {
@@ -51,12 +51,21 @@ public class MainServerStarter {
             // Mono promise for single value
             Mono<Massage> postedMassage = request.bodyToMono(Massage.class);
             return postedMassage.flatMap(msg -> {
-                massages = massages.append(msg);
+                syncAddMessage(msg);
                 return ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(fromValue(massages.toJavaList()));
             });
         };
+    }
+
+    /**
+     * Just for only one thread until work will be done
+     *
+     * @param msg
+     */
+    private static synchronized void syncAddMessage(Massage msg) {
+        massages = massages.append(msg);
     }
 
     private static HandlerFunction<ServerResponse> renderMessages() {
@@ -83,5 +92,13 @@ public class MainServerStarter {
                 .block())
                 .onDispose()
                 .block();
+    }
+
+    /**
+     * Synchronized threads when server call the resources of messages
+     * @return
+     */
+    private synchronized List<Massage> getSyncMessage() {
+        return massages;
     }
 }
