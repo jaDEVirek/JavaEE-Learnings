@@ -20,7 +20,7 @@ public class Topic {
         return new Topic(topicName, List.empty());
     }
 
-    public Topic addMessageForTopic(Massage message) {
+    public Topic addMessageToTopic(Massage message) {
         this.messages.append(message);
         return this;
     }

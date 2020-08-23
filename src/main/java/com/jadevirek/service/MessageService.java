@@ -16,14 +16,15 @@ public class MessageService {
 
 
     public Option<Topic> getTopicByName(String topicName) {
-        return topics.get(topicName).;
+        return topics.get(topicName);
     }
 
     public void addMessageToTopic(String topicName, @Nullable Massage massage) {
-        topics.get(topicName).map(topic -> topic.)
+        topics.get(topicName)
+                .map(topic -> topic.addMessageToTopic(massage));
     }
 
-    public void createNewTopic(String topicName){
+    public void createNewTopic(String topicName) {
 
     }
 }
