@@ -15,14 +15,11 @@ public class Topic {
         this.messages = messages;
     }
 
-
     public static Topic createTopic(String topicName) {
         return new Topic(topicName, List.empty());
     }
 
-    public Topic addMessageToTopic(Massage message) {
-        this.messages.append(message);
-        return this;
+    public Topic addMessage(Massage message) {
+        return new Topic(this.name, this.messages.prepend(message));
     }
-
 }
