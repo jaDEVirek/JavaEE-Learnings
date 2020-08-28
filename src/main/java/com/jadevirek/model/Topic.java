@@ -1,4 +1,4 @@
-package com.jadevirek.response;
+package com.jadevirek.model;
 
 import io.vavr.collection.List;
 
@@ -21,5 +21,9 @@ public class Topic {
 
     public Topic addMessage(Massage message) {
         return new Topic(this.name, this.messages.prepend(message));
+    }
+
+    public String getName() {
+        return name;
     }
 }

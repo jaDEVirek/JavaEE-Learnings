@@ -1,4 +1,4 @@
-package com.jadevirek.response;
+package com.jadevirek.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

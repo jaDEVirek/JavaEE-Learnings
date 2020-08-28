@@ -1,7 +1,8 @@
 package com.jadevirek;
 
 
-import com.jadevirek.response.Massage;
+import com.jadevirek.model.Massage;
+import com.jadevirek.service.ForumContentService;
 import io.vavr.collection.List;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.HttpHandler;
@@ -24,7 +25,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 public class MainServerStarter {
     private static List<Massage> massages = List.empty();
-
+    private final ForumContentService serviceContent;
 
     public static void main(String[] args) {
 //        RouterFunction<ServerResponse> route = getRouteResponse();
@@ -37,6 +38,7 @@ public class MainServerStarter {
      */
     public MainServerStarter() {
         syncAddMessage(new Massage("Rejestrator1", "Pierwsze słowa"));
+        serviceContent= new ForumContentService();
     }
 
     private static RouterFunction<ServerResponse> getRouteResponse() {
