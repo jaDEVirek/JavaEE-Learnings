@@ -24,7 +24,43 @@ public class MonotonicSolution {
         return true;
     }
 
+    /**
+     *   Soultion O(n) timing complexity
+     * @param arr
+     * @return
+     */
+    static boolean isMonotonic(int[] arr){
+        if(arr.length <= 2){
+            return true;
+        }
+        int diff = 0;
+        for (int i=1; i<arr.length; i++){
+            int newDiff = arr[i] - arr[i-1];
+            if (newDiff * diff < 0) {
+                return false;
+            }
+            diff = newDiff;
+        }
+        return true;
+    }
 
+    /**
+     * Other clean solution
+     * @param array
+     */
+    public boolean isMonotonicSolve2(int[] array) {
+        int store = 0;
+        for (int i = 0; i < array.length - 1; ++i) {
+            int c = Integer.compare(array[i], array[i+1]);
+            if (c != 0) {
+                if (c != store && store != 0)
+                    return false;
+                store = c;
+            }
+        }
+
+        return true;
+    }
 
     public static void main(String[] args) {
 
