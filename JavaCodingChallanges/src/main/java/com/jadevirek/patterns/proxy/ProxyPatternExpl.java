@@ -2,7 +2,7 @@ package main.java.com.jadevirek.patterns.proxy;
 
 /**
  * Simple class present proxy pattern in Java
- *
+ *   Runner and show result
  */
 public class ProxyPatternExpl {
 
