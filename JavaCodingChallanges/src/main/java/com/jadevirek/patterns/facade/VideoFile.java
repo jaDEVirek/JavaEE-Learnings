@@ -4,14 +4,14 @@ package main.java.com.jadevirek.patterns.facade;
 /**
  * POJO model class- for facade pattern example in Java
  */
-public class VideFile {
+public class VideoFile {
 
     private String fileName;
     private String fileType;
     private String codecType;
 
 
-    public VideFile(String fileName, String fileType, String codecType) {
+    public VideoFile(String fileName, String fileType, String codecType) {
         this.fileName = fileName;
         this.fileType = fileType;
         this.codecType = codecType;
