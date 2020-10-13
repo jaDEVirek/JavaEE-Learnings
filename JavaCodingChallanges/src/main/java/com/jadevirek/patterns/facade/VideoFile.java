@@ -7,37 +7,19 @@ package main.java.com.jadevirek.patterns.facade;
 public class VideoFile {
 
     private String fileName;
-    private String fileType;
-    private String codecType;
+    private String codecType; 
 
 
-    public VideoFile(String fileName, String fileType, String codecType) {
+    public VideoFile(String fileName) {
         this.fileName = fileName;
-        this.fileType = fileType;
-        this.codecType = codecType;
+        this.codecType = fileName.substring(fileName.indexOf('.')+1);
     }
 
     public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getFileType() {
-        return fileType;
-    }
-
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
-
     public String getCodecType() {
         return codecType;
-    }
-
-    public void setCodecType(String codecType) {
-        this.codecType = codecType;
     }
 }
