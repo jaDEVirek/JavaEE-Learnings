@@ -67,4 +67,16 @@ public class Computer {
     public boolean isBluetoothEnabled() {
         return isBluetoothEnabled;
     }
+
+    @Override public String toString() {
+        return "Computer{" +
+                "HDD='" + HDD + '\'' +
+                ", RAM='" + RAM + '\'' +
+                ", processor='" + processor + '\'' +
+                ", graphicCard='" + graphicCard + '\'' +
+                ", integratedCard='" + integratedCard + '\'' +
+                ", isDedicatedHraphicCardEnabled=" + isDedicatedHraphicCardEnabled +
+                ", isBluetoothEnabled=" + isBluetoothEnabled +
+                '}';
+    }
 }

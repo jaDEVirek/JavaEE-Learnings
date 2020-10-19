@@ -26,7 +26,7 @@ public class ComputerBuilderImpl implements IComputerBuilder {
         if (computer.isDedicatedHraphicCardEnabled()) {
             computer.setGraphicCard(graphicCardName);
         } else {
-            computer.setGraphicCard("");
+            computer.setGraphicCard("None");
         }
         return this;
     }
