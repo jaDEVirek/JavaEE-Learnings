@@ -8,13 +8,14 @@ import java.math.BigDecimal;
  * List sort function, or other functions which takes sorting parameter as
  * "something extends Comparable<T>
  */
-public class OwnObject implements Comparable<OwnObject> {
+public class ProgrammerEmployee implements Comparable<ProgrammerEmployee> {
 
     private String ownName;
     private String ownCompanyName;
     private BigDecimal ownSalary;
+    private String ownPosition;
 
-    @Override public int compareTo(OwnObject o) {
+    @Override public int compareTo(ProgrammerEmployee o) {
         int localResult = this.ownName.compareTo(o.ownName);
         if (localResult == 0) {
             localResult = this.ownCompanyName.compareTo(o.ownCompanyName);
@@ -32,5 +33,32 @@ public class OwnObject implements Comparable<OwnObject> {
 
     @Override public int hashCode() {
         return super.hashCode();
+    }
+
+    public String getOwnName() {
+        return ownName;
+    }
+
+    public String getOwnCompanyName() {
+        return ownCompanyName;
+    }
+
+    public BigDecimal getOwnSalary() {
+        return ownSalary;
+    }
+
+    public String getPosition() {
+        return ownPosition;
+    }
+
+    public Integer mapPossitionToIntValue(){
+        if(this.getPosition().equals("Senior")){
+            return 2;
+        }else if(this.getPosition().equals("Junior")){
+            return 1;
+        }else{
+            //default Intern
+            return 0;
+        }
     }
 }
