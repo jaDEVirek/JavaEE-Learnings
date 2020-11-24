@@ -2,7 +2,7 @@
 // promises
 require('styles/main.scss');
 /* js */
-import { log, logTitle } from 'logger';
+import {log, logTitle} from 'logger';
 /* your imports */
 logTitle('Promises & Fetch Api');
 
