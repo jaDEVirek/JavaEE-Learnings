@@ -10,7 +10,7 @@ This repository  contains 3 DIFFERENT projects that I working on, to get expiren
 # FrontLayer: 
 if front module for JavaEE editions, based on Angular framework. This Layer is set up with JavaEE server - to create basic frontend for little FORUM application.
 
-# Alghortim-problems: 
+# Algorithm-problems: 
 is other module, setting up with React-JS project, to work with some 
 arithmetic, algorithms or  math problems to train my skills and getting acquainted with DATA complexity time, good practies, solutions and to 
 learn how to work with REACT JS on front- client-server side.
